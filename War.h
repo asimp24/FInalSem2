@@ -1,7 +1,6 @@
 #ifndef FINALSEM2_WAR_H
 #define FINALSEM2_WAR_H
 #include "Deck.h"
-
 class War {
 private:
     Deck deck;

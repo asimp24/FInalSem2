@@ -1,13 +1,83 @@
-//
-// Created by administrator on 4/11/24.
-//
-
 #ifndef FINALSEM2_PIGDICE_H
 #define FINALSEM2_PIGDICE_H
 #include <iostream>
 #include <cstdlib>
 class Pigdice{
+    int score=0;
+    int scoreThisTurn=0;
+    int turn=0;
+    bool turnOver= false;
+    bool gameOver= false;
+public:
 
+
+    int main() {
+        displayRules();
+        play_game();
+        return 0;
+    }
+
+    void play_game(){
+        if (gameOver){
+            std::   cout << "Game Over! It took you "<< turn << " turns to finish!";
+        }
+        else{
+            take_turn();
+            play_game();
+        }
+    }
+    void take_turn(){
+        char choice;
+        turnOver=false ;
+        std:: cout<< "TURN " << ++turn << std::endl;
+        //ROLL OR HOLD
+        while(!turnOver) {
+            std:: cout << "(R)oll or (H)old: ";
+            std:: cin>> choice;
+            std::cout <<std::endl;
+            if (choice == 'R') {
+                roll();
+            } else if (choice == 'H') {
+                hold();
+            }
+        }
+    }
+    void roll(){
+        int die;
+        die= (rand() % 6)+1;
+        if (die==1){
+            turnOver=true;
+            scoreThisTurn=0;
+            std:: cout<< "Die: "<<die<< std::endl;
+            std::cout << "Turn Over. No Score." << std::endl;
+            std:: cout << "Score this turn " << scoreThisTurn << std::endl;
+            std::  cout << "Total score " << score << std::endl << std::endl;
+        }
+        else{
+            scoreThisTurn+=die;
+            std::cout<< "Die: "<<die<< std::endl;
+            std:: cout << "Score this turn " << scoreThisTurn << std::endl;
+            std:: cout << "Total score " << score << std::endl << std::endl;
+        }
+
+    }
+
+    void hold(){
+        turnOver=true;
+        score+=scoreThisTurn;
+       scoreThisTurn=0;
+        if (score>=20)
+            gameOver=true;
+        std::cout << "Total score " << score << std::endl << std::endl;
+    }
+
+    int displayRules() {
+        std::cout << "* See how many turns it takes to reach 20 points" << std::endl <<
+             "* A turn is over when you roll a 1 or you choose to hold" << std::endl <<
+             "* If you roll a 1, then all points for that turn are lost" << std::endl <<
+             "* If you hold, then points for the turn are added to score" << std::endl <<
+             "**********************************************************" << std::endl << std::endl;
+    }
 
 
 
