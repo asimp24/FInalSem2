@@ -4,6 +4,7 @@
 #include "Deck.h"
 #include <iostream>
 
+
 class War {
 private:
     Deck deck;

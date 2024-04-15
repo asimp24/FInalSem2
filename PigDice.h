@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 
+
 class Pigdice{
 private:
     int score=0;

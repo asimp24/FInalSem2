@@ -4,6 +4,7 @@
 #include <iostream>
 #include <ctime>
 
+
 class Dice_Game{
 private:
     int die1;
