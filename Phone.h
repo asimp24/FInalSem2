@@ -20,10 +20,13 @@ public:
         std::cout << "|   |   [2] Blackjack            |" << std::endl;
         std::cout << "|___|____________________________|" << std::endl;
         std::cout << "|___|                            |" << std::endl;
-        std::cout << "|   |   [3] PigDice                 |" << std::endl;
+        std::cout << "|   |   [3] PigDice              |" << std::endl;
         std::cout << "|___|____________________________|" << std::endl;
         std::cout << "|___|                            |" << std::endl;
-        std::cout << "|   |   [4] Exit                  |" << std::endl;
+        std::cout << "|   |   [4] Craps                |" << std::endl;
+        std::cout << "|___|____________________________|" << std::endl;
+        std::cout << "|___|                            |" << std::endl;
+        std::cout << "|   |   [5] Exit                 |" << std::endl;
         std::cout << "|___|____________________________|" << std::endl;
         std::cout << "\\___\\____________________________\\" << std::endl;
         std::cout << " \\________________________________\\" << std::endl;

@@ -3,6 +3,7 @@
 #include "War.h"
 #include "BlackJack.h"
 #include "PigDice.h"
+#include "Dice_Game.h"
 
 
 class Game{
@@ -10,6 +11,7 @@ private:
     War warGame;
 Blackjack blackjackGame;
 Pigdice pigdiceGame;
+Dice_Game diceGame;
 public:
    void startGame(int choice) {
    if(choice==1)
@@ -18,7 +20,10 @@ public:
        blackjackGame.play_game();
    else if (choice==3)
        pigdiceGame.play_game();
+   else if (choice==4)
+       diceGame.play();
    }
+
 
 
     };
