@@ -12,7 +12,9 @@ private:
     Hand dealer_hand;
     Hand player_hand;
 public:
-    Blackjack();
+    Blackjack(){
+
+    }
     Hand get_player_hand(Deck&,Hand&);
     Hand get_dealer_hand(Deck&,Hand&);
     void display_cards(Hand,std::string title);

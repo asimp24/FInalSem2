@@ -10,7 +10,9 @@ private:
     bool gameOver;
 
 public:
-    War();
+    War() {
+
+    }
     void dealCards() {
         for (int i = 0; i < 52; i += 2) {
             player1Hand.push_back(deck.deal_card());
@@ -88,5 +90,6 @@ public:
         }
     };
 };
+
 
 #endif //FINALSEM2_WAR_H
