@@ -32,6 +32,7 @@ int main(){
                     break;
                 case 4 :
                     std::cout << "\nStarting Craps game...\n";
+                    game.startGame(choice);
                     break;
                 case 5:
                     std::cout << "\nExiting Game Center. Goodbye!\n";
