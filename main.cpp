@@ -36,7 +36,6 @@ int main(){
                     std::cout << "\nInvalid choice. Please enter a valid option.\n";
                     break;
             }
-
         } while (choice != 3);
 
     return 0;

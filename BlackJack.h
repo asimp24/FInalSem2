@@ -20,7 +20,6 @@ public:
     void play_game();
 };
 
-
 Hand Blackjack::get_player_hand(Deck& deck,Hand& player_hand){
     char choice='h';
     while(choice !='s'){

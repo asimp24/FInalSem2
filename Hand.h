@@ -23,7 +23,6 @@ Hand::Hand(){
 void Hand::clear_hand(){
     hand.clear();
 }
-
 void Hand::operator+=(Card card){
     hand.push_back(card);
 }

@@ -5,7 +5,6 @@
 #include "PigDice.h"
 
 class Game{
-
 private:
     War warGame;
 Blackjack blackjackGame;

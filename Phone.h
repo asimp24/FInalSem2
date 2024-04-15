@@ -26,6 +26,5 @@ public:
         std::cout << " \\________________________________\\" << std::endl;
     }
 
-
 };
 #endif //FINALSEM2_PHONE_H
