@@ -11,13 +11,16 @@ private:
 Blackjack blackjackGame;
 Pigdice pigdiceGame;
 public:
-    Game();
-    void start();
+   void startGame(int choice) {
+   if(choice==1)
+       warGame.playRound();
+   else if (choice==2)
+       blackjackGame.play_game();
+   else if (choice==3)
+       pigdiceGame.play_game();
+   }
 
 
+    };
 
-
-
-
-};
 #endif //FINALSEM2_GAME_H
