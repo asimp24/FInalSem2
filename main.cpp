@@ -27,16 +27,20 @@ int main(){
                     // Call function to start Blackjack game
                     break;
                 case 3:
-                    std::cout<< "\nStarting Pigdice Game...\n";
+                    std::cout<< "\nStarting Pigdice game...\n";
                     game.startGame(choice);
                     break;
                 case 4 :
+                    std::cout << "\nStarting Craps game...\n";
+                    break;
+                case 5:
                     std::cout << "\nExiting Game Center. Goodbye!\n";
+                    break;
                 default:
                     std::cout << "\nInvalid choice. Please enter a valid option.\n";
                     break;
             }
-        } while (choice != 3);
+        } while (choice != 5);
 
     return 0;
 }
