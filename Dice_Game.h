@@ -22,6 +22,7 @@ public:
     }
 
     void play(){
+        std::cout << "Welcome to the dice game Craps" << std::endl << std::endl;
         char repeat = 'y';
 
         while (repeat = 'y'){
