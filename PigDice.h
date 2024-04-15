@@ -58,7 +58,7 @@ public:
     void hold(){
         turnOver=true;
         score+=scoreThisTurn;
-       scoreThisTurn=0;
+        scoreThisTurn=0;
         if (score>=20)
             gameOver=true;
         std::cout << "Total score " << score << std::endl << std::endl;
@@ -66,10 +66,10 @@ public:
 
     int displayRules() {
         std::cout << "* See how many turns it takes to reach 20 points" << std::endl <<
-             "* A turn is over when you roll a 1 or you choose to hold" << std::endl <<
-             "* If you roll a 1, then all points for that turn are lost" << std::endl <<
-             "* If you hold, then points for the turn are added to score" << std::endl <<
-             "**********************************************************" << std::endl << std::endl;
+                  "* A turn is over when you roll a 1 or you choose to hold" << std::endl <<
+                  "* If you roll a 1, then all points for that turn are lost" << std::endl <<
+                  "* If you hold, then points for the turn are added to score" << std::endl <<
+                  "**********************************************************" << std::endl << std::endl;
     }
 
 

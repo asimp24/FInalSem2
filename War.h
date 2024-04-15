@@ -1,7 +1,9 @@
 #ifndef FINALSEM2_WAR_H
 #define FINALSEM2_WAR_H
+
 #include "Deck.h"
 #include <iostream>
+
 class War {
 private:
     Deck deck;
@@ -10,18 +12,29 @@ private:
     bool gameOver;
 
 public:
-    War() {
+    War() : gameOver(false) {} // Initialize gameOver to false
 
-    }
     void dealCards() {
         for (int i = 0; i < 52; i += 2) {
             player1Hand.push_back(deck.deal_card());
             player2Hand.push_back(deck.deal_card());
         }
-    };
+    }
+
     void playRound() {
+        if (gameOver) {
+            return; // If the game is over, exit the function immediately.
+        }
+
+        if (player1Hand.empty() || player2Hand.empty()) {
+            gameOver = true;
+            return;
+        }
+
         Card card1 = player1Hand.back();
+        player1Hand.pop_back();
         Card card2 = player2Hand.back();
+        player2Hand.pop_back();
 
         std::cout << "Player 1 plays: " << card1 << std::endl;
         std::cout << "Player 2 plays: " << card2 << std::endl;
@@ -42,9 +55,16 @@ public:
         if (player1Hand.empty() || player2Hand.empty()) {
             gameOver = true;
         }
+        char c;
+        std::cout<< "Would you like to continue?(y/n)";
+       std::cin>> c;
+       if (c=='n') {
+           player1Hand.clear();
+           player2Hand.clear();
+       }
     }
-    ;
-    void resolveWar(){
+
+    void resolveWar() {
         const int warSize = 3;
         if (player1Hand.size() < warSize || player2Hand.size() < warSize) {
             gameOver = true;
@@ -53,10 +73,19 @@ public:
 
         std::vector<Card> pot;
         for (int i = 0; i < warSize; ++i) {
+            if (player1Hand.empty() || player2Hand.empty()) {
+                gameOver = true;
+                return;
+            }
             pot.push_back(player1Hand.back());
             player1Hand.pop_back();
             pot.push_back(player2Hand.back());
             player2Hand.pop_back();
+        }
+
+        if (player1Hand.empty() || player2Hand.empty()) {
+            gameOver = true;
+            return;
         }
 
         Card card1 = player1Hand.back();
@@ -75,21 +104,31 @@ public:
             std::cout << "Player 2 wins the war!" << std::endl;
             player2Hand.insert(player2Hand.begin(), pot.begin(), pot.end());
         } else {
-            std::cout << "Another tie! Resolving another war..." << std::endl;
-            resolveWar();
+            std::cout << "Another tie!" << std::endl;
+            // Do nothing and let the current war round end without further recursion.
         }
     }
-    bool isGameOver() const{
+
+    bool isGameOver() const {
         return gameOver;
-    };
-    void printWinner() const{
+    }
+
+    void printWinner() const {
         if (player1Hand.empty()) {
             std::cout << "Player 2 wins the game!" << std::endl;
         } else {
             std::cout << "Player 1 wins the game!" << std::endl;
         }
-    };
-};
+    }
 
+    void startGame() {
+        deck.shuffle();
+        dealCards();
+        while (!isGameOver()) {
+            playRound();
+        }
+        printWinner();
+    }
+};
 
 #endif //FINALSEM2_WAR_H

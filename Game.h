@@ -15,7 +15,7 @@ Dice_Game diceGame;
 public:
    void startGame(int choice) {
    if(choice==1)
-       warGame.playRound();
+       warGame.startGame();
    else if (choice==2)
        blackjackGame.play_game();
    else if (choice==3)

@@ -7,7 +7,7 @@ public:
 // Function to display the phone interface
     void displayPhoneScreen() {
 
-        std::cout << "  _______________________________" << std::endl;
+        std::cout << "\n  _______________________________" << std::endl;
         std::cout << " / \\                             \\" << std::endl;
         std::cout << "|   |                            |" << std::endl;
         std::cout << "|   |                            |" << std::endl;
