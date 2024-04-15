@@ -27,13 +27,14 @@ public:
             std:: cout << "(R)oll or (H)old: ";
             std:: cin>> choice;
             std::cout <<std::endl;
-            if (choice == 'R') {
+            if (choice == 'R' || choice == 'r') { // Corrected condition
                 roll();
-            } else if (choice == 'H') {
+            } else if (choice == 'H' || choice == 'h') { // Corrected condition
                 hold();
             }
         }
     }
+
     void roll(){
         int die;
         die= (rand() % 6)+1;
