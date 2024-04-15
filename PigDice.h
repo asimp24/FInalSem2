@@ -27,9 +27,9 @@ public:
             std:: cout << "(R)oll or (H)old: ";
             std:: cin>> choice;
             std::cout <<std::endl;
-            if (choice == 'R' || choice == 'r') { // Corrected condition
+            if (choice == 'R' || choice == 'r') {
                 roll();
-            } else if (choice == 'H' || choice == 'h') { // Corrected condition
+            } else if (choice == 'H' || choice == 'h') {
                 hold();
             }
         }
