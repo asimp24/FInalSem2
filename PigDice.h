@@ -2,29 +2,21 @@
 #define FINALSEM2_PIGDICE_H
 #include <iostream>
 #include <cstdlib>
+
 class Pigdice{
+private:
     int score=0;
     int scoreThisTurn=0;
     int turn=0;
     bool turnOver= false;
     bool gameOver= false;
 public:
-
-
-    int main() {
-        displayRules();
-        play_game();
-        return 0;
-    }
-
     void play_game(){
-        if (gameOver){
-            std::   cout << "Game Over! It took you "<< turn << " turns to finish!";
-        }
-        else{
+        displayRules();
+        while (!gameOver){
             take_turn();
-            play_game();
         }
+        std::cout << "Game over! It took you " << turn << " turns to finish!" << std::endl;
     }
     void take_turn(){
         char choice;
