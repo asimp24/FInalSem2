@@ -26,16 +26,27 @@ public:
         std::cout << "Welcome to the dice game Craps" << std::endl << std::endl;
         char repeat = 'y';
 
-        while (repeat = 'y'){
+        while (repeat != 'n'){
             rollDice=roll();
+            char l;
             std::cout << "You rolled " << rollDice << std::endl;
-
+            std::cout<< "Enter any letter to continue: ";
+            std:: cin >> l;
             if(rollDice == 7 || rollDice == 11){
                 std::cout << "You win!" << std::endl;
             }else if (rollDice == 2 || rollDice == 3 || rollDice == 12){
                 std::cout << "You lose!" << std::endl;
             }else{
-                int sum2 = roll();
+                int sum2;
+                char y;
+                while(sum2 != rollDice ){
+                    sum2 = roll();
+                    std::cout << "You rolled " << sum2 << std::endl;
+                    if (sum2==7)
+                        break;
+                    std::cout<< "Enter any letter to continue: ";
+                    std:: cin >> y;
+                }
                 if(sum2 == rollDice){
                     std::cout << "Winner! " << std::endl;
                     break;
@@ -44,7 +55,7 @@ public:
                     break;
                 }
             }
-            std::cout << "Play again?";
+            std::cout << "Play again?(y/n)";
             std::cin >> repeat;
         }
         std::cout << "Thank you for playing!";

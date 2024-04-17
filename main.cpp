@@ -42,6 +42,9 @@ int main(){
                     std::cout << "\nInvalid choice. Please enter a valid option.\n";
                     break;
             }
+            char p;
+            std::cout<< "\nEnter any letter to continue: ";
+            std:: cin >> p;
         } while (choice != 5);
 
     return 0;
